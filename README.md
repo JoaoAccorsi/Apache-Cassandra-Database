@@ -25,3 +25,10 @@ DataStax Astra DB simplifies cloud-native application development, and reduces t
 ✅ In Databases tab, you will see your databases in Pending statuses. In around 5 minutes it will be ready as Active.
 
 https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/4c04f8ea-9e45-4a20-9d38-817807d1b8e6
+
+## 3. CQL Console, Login to the database and describe keyspaces
+
+These steps are needed to configure the Cassandra database.  <br />
+For these, please consider:
+
+✅ 3a. CQL Console
