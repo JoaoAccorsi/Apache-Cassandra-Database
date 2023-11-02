@@ -183,5 +183,5 @@ SELECT trip_id, person_id, date, departure_city, destinicy_city, distance FROM t
 ```
 📗 **Expected output**
 
-![6  C(R)UD - Read](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/520a2011-c8a1-4e1c-80c7-0ebe9fbfd490)
+![6  C(R)UD - Read](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/28341976-4aa7-452e-861a-6b76e7374bd4)
 
