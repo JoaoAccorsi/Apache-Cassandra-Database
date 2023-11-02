@@ -1,4 +1,4 @@
-# 🔥 Apache Cassandra Sample Implementation with AstraDatastax 🔥
+# 🔥 Apache Cassandra with AstraDatastax 🔥
 
 > Developed for the Bachelor's Degree in Computer Science:
 > - University: Universidade do Vale do Rio dos Sinos (Unisinos)
@@ -21,4 +21,7 @@ DataStax Astra DB simplifies cloud-native application development, and reduces t
 
 ✅ In the Astra DB home page, choose Create Database.  <br />
 ✅ Fill the Database Name and Keyspace Name.  <br />
-✅ In the region, you can choose any provider with the region closest to you.
+✅ For the region, you can choose any provider with the region closest to you.  <br />
+✅ In Databases tab, you will see your databases in Pending statuses. In around 5 minutes it will be ready as Active.
+
+https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/4c04f8ea-9e45-4a20-9d38-817807d1b8e6
