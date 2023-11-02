@@ -185,3 +185,14 @@ SELECT trip_id, person_id, date, departure_city, destinicy_city, distance FROM t
 
 ![6  C(R)UD - Read](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/28341976-4aa7-452e-861a-6b76e7374bd4)
 
+## 6. CR(U)D - Update
+To update the data stored in Cassandra , CQL command `UPDATE` is used.
+
+📘 **Command to execute**
+```sql
+
+```
+📗 **Expected output**
+
+
+
