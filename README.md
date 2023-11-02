@@ -24,11 +24,164 @@ DataStax Astra DB simplifies cloud-native application development, and reduces t
 ✅ For the region, you can choose any provider with the region closest to you.  <br />
 ✅ In Databases tab, you will see your databases in Pending statuses. In around 5 minutes it will be ready as Active.
 
-https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/4c04f8ea-9e45-4a20-9d38-817807d1b8e6
+https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/94c17af7-3b96-43c0-8f31-1cf5b8adb47e
 
-## 3. CQL Console, Login to the database and describe keyspaces
-
-These steps are needed to configure the Cassandra database.  <br />
-For these, please consider:
+## 3. CQL Console, describe keyspaces and USE it
 
 ✅ 3a. CQL Console
+
+Please navigate to the CQL console:
+
+https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/7453c9f3-7905-4a1d-811e-a9286c9bc48d
+
+✅ 3b. Describe Keyspaces
+
+Before creating a table, it is needed to tell the database which keyspace will be used. <br />
+To do this, **_DESCRIBE_** (or "DESC") command show all of the keyspaces that are in the database. 
+
+📘 **Command to execute**
+```sql
+DESC KEYSPACES;
+```
+📗 **Expected output**
+
+![3b  Describe keyspaces](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/8b28e075-edd1-46ad-a441-fe03c9659a30)
+
+We can see keyspace `tutorial` that we had initially created.
+
+✅ 3c. USE the keyspace
+
+Execute the USE command with the keyspace `tutorial` to tell the database the context with `tutorial`.
+
+📘 **Command to execute**
+```sql
+USE tutorial;
+```
+
+📗 **Expected output**
+
+![3c  USE the keyspace](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/4aab2f88-975c-4e6b-bd28-b0a8453f37e9)
+
+The prompt displays ```<username>@cqlsh:tutorial>``` showing that the **_tutorial_** keyspace is being used. 
+
+## 4. Create Tables
+
+For this tutorial, a sample travel system was created, with tables `person`, `plane` and `trip`. <br />
+To create the tables, consider the below CQL commands:
+
+📘 **Command to execute**
+
+```sql
+CREATE TABLE IF NOT EXISTS person ( 
+  person_id     UUID,
+  name          TEXT,
+  nationality   TEXT,	
+  email         TEXT,
+  PRIMARY KEY (person_id)
+);
+
+CREATE TABLE IF NOT EXISTS plane ( 
+  plane_id    UUID,
+  plane_name  TEXT, 
+  year        TEXT,
+  PRIMARY KEY (plane_id)
+);
+
+CREATE TABLE IF NOT EXISTS trip ( 
+  trip_id         UUID, 
+  person_id       UUID,
+  plane_id        UUID,
+  date            TEXT,     
+  departure_city  TEXT,
+  destinicy_city  TEXT,
+  distance        TEXT,
+  PRIMARY KEY ((trip_id), person_id, plane_id)
+) WITH CLUSTERING ORDER BY (person_id DESC, plane_id DESC);
+```
+
+📗 **Expected output**
+
+![4  Create Tables](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/9ea8b774-bab8-4c4a-831b-a4fae8c9f182)
+
+By the _DESC_ CQL command, you can see the created tables. <br /> <br />
+📘 **Command to execute**
+```sql
+DESC TABLES;
+```
+
+📗 **Expected output**
+
+![image](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/35b7328b-c503-4110-819d-c5d62442a1bb)
+
+## 5. (C)RUD - Create
+To populate the created tables with data, CQL command `INSERT` is used.
+
+📘 **Command to execute**
+```sql
+// Insert into table person
+
+INSERT INTO person (person_id, name, nationality, email) VALUES (
+  11111111-1111-1111-1111-111111111111, 'William Griffin', 'Irish', 'william.griffin@gmail.com'
+);
+
+INSERT INTO person (person_id, name, nationality, email) VALUES (
+  22222222-2222-2222-2222-222222222222, 'Jennifer Gooden', 'Australian', 'jennifer.gooden@gmail.com'
+);
+
+INSERT INTO person (person_id, name, nationality, email) VALUES (
+  33333333-3333-3333-3333-333333333333, 'David Figman', 'Canadian', 'david.figman@gmail.com'
+);
+
+// Insert into table plane
+
+INSERT INTO plane (plane_id, plane_name, year) VALUES (
+  44444444-4444-4444-4444-444444444444, 'Airbus A380', '2020'
+);
+
+INSERT INTO plane (plane_id, plane_name, year) VALUES (
+  55555555-5555-5555-5555-555555555555, 'Boeing 777', '2020'
+);
+
+INSERT INTO plane (plane_id, plane_name, year) VALUES (
+  66666666-6666-6666-6666-666666666666, 'Airbus A320', '2023'
+);
+
+// Insert into table trip
+
+INSERT INTO trip (trip_id, person_id, plane_id, date, departure_city, destinicy_city, distance) VALUES (
+  77777777-7777-7777-7777-777777777777, 22222222-2222-2222-2222-222222222222, 
+  55555555-5555-5555-5555-555555555555, '22/06/2023', 'Sao Paulo', 'New York', '7.681 km'
+);
+
+INSERT INTO trip (trip_id, person_id, plane_id, date, departure_city, destinicy_city, distance) VALUES (
+  88888888-8888-8888-8888-888888888888, 33333333-3333-3333-3333-333333333333, 
+  44444444-4444-4444-4444-444444444444, '02/02/2023', 'Sao Paulo', 'Madrid', '8.380 km' 
+);
+
+INSERT INTO trip (trip_id, person_id, plane_id, date, departure_city, destinicy_city, distance) VALUES (
+  99999999-9999-9999-9999-999999999999, 11111111-1111-1111-1111-111111111111, 
+  66666666-6666-6666-6666-666666666666, '10/04/2021', 'Porto Alegre', 'Curitiba', '751 km' 
+);
+```
+📗 **Expected output**
+
+![5  (C)RUD - Create](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/de3a0c4f-260a-40cf-ae10-fdb15ff1b4af)
+
+## 6. C(R)UD - Read
+To read the data stored in Cassandra , CQL command `SELECT` is used.
+
+📘 **Command to execute**
+```sql
+SELECT * FROM person;
+
+SELECT plane_id, plane_name, year FROM plane 
+	WHERE year = '2020' ALLOW FILTERING;
+
+SELECT trip_id, person_id, date, departure_city, destinicy_city, distance FROM trip
+  WHERE departure_city = 'Sao Paulo' ALLOW FILTERING;
+
+```
+📗 **Expected output**
+
+![6  C(R)UD - Read](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/520a2011-c8a1-4e1c-80c7-0ebe9fbfd490)
+
