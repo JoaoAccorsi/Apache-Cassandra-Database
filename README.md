@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS trip (
 
 📗 **Expected output**
 
-![4  Create Tables](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/9ea8b774-bab8-4c4a-831b-a4fae8c9f182)
+![4a  Create Tables](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/4ffe13c6-b462-4449-be4b-bc6a7e5ea9f2)
 
 By the _DESC_ CQL command, you can see the created tables. <br /> <br />
 📘 **Command to execute**
@@ -165,7 +165,7 @@ INSERT INTO trip (trip_id, person_id, plane_id, date, departure_city, destinicy_
 ```
 📗 **Expected output**
 
-![5  (C)RUD - Create](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/de3a0c4f-260a-40cf-ae10-fdb15ff1b4af)
+![8  CRU(D) - Delete](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/691de7b1-834c-4cfb-9d7a-b10d868210b8)
 
 ## 6. C(R)UD - Read
 To read the data stored in Cassandra , CQL command `SELECT` is used.
