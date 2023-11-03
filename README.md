@@ -185,14 +185,37 @@ SELECT trip_id, person_id, date, departure_city, destinicy_city, distance FROM t
 
 ![6  C(R)UD - Read](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/28341976-4aa7-452e-861a-6b76e7374bd4)
 
-## 6. CR(U)D - Update
+## 7. CR(U)D - Update
 To update the data stored in Cassandra , CQL command `UPDATE` is used.
 
 📘 **Command to execute**
 ```sql
-
+UPDATE person 
+  SET email = 'william.griffin12345@gmail.com' 
+    WHERE person_id = 11111111-1111-1111-1111-111111111111;
 ```
 📗 **Expected output**
+
+![7  CR(U)D - Update](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/3a547dd7-f4b9-48f4-aaba-c99d2e102fe6)
+
+## 8. CRU(D) - Delete
+To delete the data stored in Cassandra , CQL command `DELETE` is used.
+
+📘 **Command to execute**
+```sql
+DELETE FROM plane
+  WHERE plane_id = 55555555-5555-5555-5555-555555555555;
+```
+📗 **Expected output**
+
+![8  CRU(D) - Delete](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/e9cea202-80fc-41a5-9f59-30ea9dd3af03)
+
+## 9. Conclusion
+
+With these results showed in this tutorial, we could see that Apache Cassandra is a flexible and powerful database. <br />
+It´s use together with AstraDatastax is easy, and ideal for learning proposes.
+
+
 
 
 
