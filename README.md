@@ -165,7 +165,7 @@ INSERT INTO trip (trip_id, person_id, plane_id, date, departure_city, destinicy_
 ```
 📗 **Expected output**
 
-![8  CRU(D) - Delete](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/691de7b1-834c-4cfb-9d7a-b10d868210b8)
+![5  (C)RUD - Create](https://github.com/JoaoAccorsi/Apache-Cassandra-Database/assets/60155867/1ff43cbc-c030-4bfa-9c3f-6565deb21442)
 
 ## 6. C(R)UD - Read
 To read the data stored in Cassandra , CQL command `SELECT` is used.
