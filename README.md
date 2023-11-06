@@ -1,4 +1,4 @@
-# 🔥 Apache Cassandra with AstraDatastax 🔥
+# Apache Cassandra with AstraDatastax 
 
 > Developed for the Bachelor's Degree in Computer Science:
 > - University: Universidade do Vale do Rio dos Sinos (Unisinos)
@@ -9,7 +9,8 @@
 # Objective
 
 Sample Implementation with Apache Cassandra Databases with AstraDatastax to demonstrate CRUD Operations.  
-Cassandra is a NoSQL distributed database, and its documentation can be found in [Cassandra Basics](https://cassandra.apache.org/_/cassandra-basics.html).
+Cassandra is a NoSQL distributed database, and its documentation can be found in [Cassandra Basics](https://cassandra.apache.org/_/cassandra-basics.html). <br />
+Also, this tutorial was made based in GitHub [workshop-intro-to-cassandra](https://github.com/datastaxdevs/workshop-intro-to-cassandra).
 
 ## 1. Create your Astra DB instance
 DataStax Astra DB simplifies cloud-native application development, and reduces time to install, deploy and scale.
